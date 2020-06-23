@@ -46,6 +46,14 @@
                         <h5 class="ml-4">ৰেজিষ্টাৰ কৰিবৰ বাবে তলৰ ফৰ্ম খন ভৰ্তি কৰক </h5>
                       </div>
                     </div>
+                    <div class="row" v-if="is_submitted">
+                      <div class="col-md-9">
+                        <div class="alert alert-success ml-4" role="alert">
+                          Registered successfully . <br>
+                          অভিনন্দন । অপোনাৰ ৰেজিষ্ট্ৰেচন সম্পুৰ্ণ হৈছে ।
+                        </div>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="form-container">
@@ -53,6 +61,7 @@
                                 <input type="hidden" name="form-name" value="school" />
                                 <div class="form-group">
                                     <input type="text" class="form-control-input form-control-sm"  v-model="name" placeholder="নাম" required>
+                                    <small class="text-danger" v-if="errors.name">{{errors.name}}</small>
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleFormControlSelect1">শ্ৰেণী</label>
@@ -63,15 +72,18 @@
                                     <option value="XI">XI(Science)</option>
                                     <option value="XII">XII(Science)</option>
                                   </select>
+                                  <small class="text-danger" v-if="errors.class">{{errors.class}}</small>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control-input form-control-sm" id="rphone" placeholder="ফোন নং" v-model="mobile" required>
+                                    <small class="text-danger" v-if="errors.mobile">{{errors.mobile}}</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="subject">বিষয়</label>
                                     <textarea class="form-control-input" v-model="subject" rows="5" cols="50">
 
                                     </textarea>
+                                    <small class="text-danger" v-if="errors.subject">{{errors.subject}}</small>
                                 </div>
                                 <div class="form-group">
                                     <button type="button" @click="submitForm" class="form-control-submit-button" >ৰেজিষ্টাৰ</button>
@@ -134,7 +146,7 @@ export default {
         mobile:'',
         academic_class:'',
         subject:'',
-        error:'',
+        errors:'',
         success:'',
         users:[],
         is_submitting:false,
@@ -155,12 +167,15 @@ export default {
       formdata.append('class', this.academic_class);
       formdata.append('mobile', this.mobile);
       formdata.append('subject', this.subject);
-      this.$axios.post("https://azworker.com/public/microcept_education/register",formdata)
+      this.$axios.post("https://azworker.com/public/api/microcept_education/register",formdata)
       .then(response => {
           this.is_submitting = false;
           this.is_submitted = true;
       })
       .catch(error => {
+        if(error.response.data){
+          this.errors = error.response.data.errors;
+        }
         this.is_submitting = false;
       });
     }
