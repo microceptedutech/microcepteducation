@@ -49,25 +49,32 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="form-container">
-                            <form id="requestForm"  data-focus="false" name="school" method="POST" data-netlify="true">
+                            <form id="requestForm"  data-focus="false">
                                 <input type="hidden" name="form-name" value="school" />
                                 <div class="form-group">
-                                    <input type="text" class="form-control-input form-control-sm"  name="name" placeholder="নাম" required>
+                                    <input type="text" class="form-control-input form-control-sm"  v-model="name" placeholder="নাম" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control-input form-control-sm" id="" placeholder="শ্ৰেণী" name="class" required>
+                                  <label for="exampleFormControlSelect1">শ্ৰেণী</label>
+                                  <select v-model="academic_class" class="form-control form-control-sm" id="exampleFormControlSelect1">
+                                    <option>VIII</option>
+                                    <option>IX</option>
+                                    <option>X</option>
+                                    <option value="XI">XI(Science)</option>
+                                    <option value="XII">XII(Science)</option>
+                                  </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control-input form-control-sm" id="rphone" placeholder="ফোন নং" name="phone" required>
+                                    <input type="text" class="form-control-input form-control-sm" id="rphone" placeholder="ফোন নং" v-model="mobile" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="subject">বিষয়</label>
-                                    <textarea class="form-control-input" name="subject" rows="5" cols="50">
+                                    <textarea class="form-control-input" v-model="subject" rows="5" cols="50">
 
                                     </textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control-submit-button" >ৰেজিষ্টাৰ</button>
+                                    <button type="button" @click="submitForm" class="form-control-submit-button" >ৰেজিষ্টাৰ</button>
                                 </div>
                                 <div class="form-message">
                                     <div class="alert alert-success" role="alert" v-if="success">
@@ -124,12 +131,14 @@ export default {
     return{
         showMenu:false,
         name:'',
-        email:'',
-        phone:'',
-        message:'Write your message',
+        mobile:'',
+        academic_class:'',
+        subject:'',
         error:'',
         success:'',
         users:[],
+        is_submitting:false,
+        is_submitted:false,
     }
    },
    mounted(){
@@ -139,7 +148,22 @@ export default {
     toggleTopMenu(){
         this.showMenu = !this.showMenu;
     },
-
+    submitForm(){
+      this.is_submitting = true;
+      var formdata = new FormData();
+      formdata.append('name', this.name);
+      formdata.append('class', this.academic_class);
+      formdata.append('mobile', this.mobile);
+      formdata.append('subject', this.subject);
+      this.$axios.post("https://azworker.com/public/microcept_education/register",formdata)
+      .then(response => {
+          this.is_submitting = false;
+          this.is_submitted = true;
+      })
+      .catch(error => {
+        this.is_submitting = false;
+      });
+    }
    }
 }
 </script>
