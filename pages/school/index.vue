@@ -45,7 +45,12 @@
                 <div class="col-lg-6">
                     <div class="image-container" style="margin-top:50px;">
                         <img  src="~/assets/images/school.png" alt="alternative" width="100%">
-                        <div class="offer-text-box">
+                         <el-row class="">
+                          <nuxt-link to="/register">
+                            <el-button type="primary" round size="small">Register Now</el-button>
+                          </nuxt-link>
+                        </el-row>
+                        <div class="offer-text-box mt-4">
                         গতানুগতিক শিক্ষা ব্যৱস্থাৰ পৰিৱৰ্তে নতুন দৃষ্টিভংগীৰে এক সুপৰিকল্পিত শিক্ষাৰ নিৰ্ভৰযোগ্য প্ৰতিষ্ঠান ।
                         </div>
                         <div class="offer-text-box">
@@ -160,7 +165,7 @@
                     <ul class="list-unstyled li-space-lg">
                         <li><i class="fas fa-map-marker-alt"></i>লেঙেৰী বেটনী গাওঁ , পিন - ৭৮৬৬১৬ ,ডাক - লেঙেৰী বজাৰ</li>
                         <li style="font-weight:600;"><i class="fas fa-phone"></i><a class="turquoise" href="tel:9101177123">+91 9101177123</a></li>
-                        <li style="font-weight:600;"><i class="fas fa-envelope"></i><a class="turquoise" href="mailto:microcepttechnologies@gmail.com">microcepttechnologies@gmail.com</a></li>
+                        <li style="font-weight:600;"><i class="fas fa-envelope"></i><a class="turquoise" href="mailto:educationmicrocept@gmail.com">educationmicrocept@gmail.com</a></li>
                     </ul>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -177,7 +182,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © <span style="color:#F05340;">micro</span><span style="color:#3b8070;">cept</span> 2019 . All Rights Reserved . Contact : <i class="fas fa-phone"></i> <a class="turquoise" href="tel:9101177123">+91 9101177123</a> <i class="fas fa-envelope"></i> <a class="turquoise" href="mailto:microcepttechnologies@gmail.com"> microcepttechnologies@gmail.com</a></p>
+                    <p class="p-small">
+                      Designed and Developed by <a href="https://microcept.in/"> <span style="color:#F05340;">Micro</span><span style="color:#3b8070;">cept</span> Technologies </a><br>
+                      Copyright © 2020 <span style="color:#F05340;">Micro</span><span style="color:#3b8070;">cept</span> Education . All Rights Reserved .
+                    </p>
                 </div>
             </div>
         </div>
