@@ -74,7 +74,7 @@
                     <div class="row p-4">
                       <div class="col-md-6">
                         <div class="card service-card">
-                            <img src="~/assets/images/udipta.jpg" width="100%">
+                            <img src="~/assets/images/udipta1.jpg" width="100%">
                             <div class="card-body">
                                 <h6 class="card-title">Udipta Gogoi (উদীপ্ত গগৈ)</h6>
                                 <h6 style="font-size:12px;">B.E (Electronics and Telecommunication Engineering)</h6>
