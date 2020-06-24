@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <nuxt-link to="/">
         <li class="navbar-brand logo-image">
-            <img src="~/assets/images/microcept_logo.png" alt="alternative">
+            <img src="~/assets/images/microcept_edu.png" alt="alternative">
         </li>
         </nuxt-link>
         <i class="fas fa-bars toggle-bars" @click="toggleTopMenu"></i>

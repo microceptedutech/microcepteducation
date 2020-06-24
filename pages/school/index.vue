@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <nuxt-link to="/">
         <li class="navbar-brand logo-image">
-            <img src="~/assets/images/microcept_logo.png" alt="alternative">
+            <img src="~/assets/images/microcept_edu.png" alt="alternative">
         </li>
         </nuxt-link>
         <i class="fas fa-bars toggle-bars" @click="toggleTopMenu"></i>
@@ -19,6 +19,9 @@
                 </li>
                 <li class="nav-item" @click="toggleTopMenu">
                     <a class="nav-link page-scroll" href="#services"><span style="color:#191970;">Courses</span></a>
+                </li>
+                <li class="nav-item" @click="toggleTopMenu">
+                    <a class="nav-link page-scroll" href="#materials"><span style="color:#191970;">Materials</span></a>
                 </li>
                 <li class="nav-item" @click="toggleTopMenu">
                     <a class="nav-link page-scroll" href="#contact"><span style="color:#191970;">Contact</span></a>
@@ -51,7 +54,7 @@
                           </nuxt-link>
                         </el-row>
                         <div class="offer-text-box mt-4">
-                        গতানুগতিক শিক্ষা ব্যৱস্থাৰ পৰিৱৰ্তে নতুন দৃষ্টিভংগীৰে এক সুপৰিকল্পিত শিক্ষাৰ নিৰ্ভৰযোগ্য প্ৰতিষ্ঠান ।
+                        গতানুগতিক শিক্ষা পদ্ধতিৰ পৰিৱৰ্তে নতুন দৃষ্টিভংগীৰে এক সুপৰিকল্পিত শিক্ষাৰ নিৰ্ভৰযোগ্য প্ৰতিষ্ঠান ।
                         </div>
                         <div class="offer-text-box">
                         প্ৰত্যেক গোটত নিৰ্বাচিত দুজনকৈ ছাত্ৰ-ছাত্ৰীৰ বাবে বিনামূলীয়া শিক্ষাৰ ব্যৱস্থা ।
@@ -63,9 +66,61 @@
                         <h4><span style="color:#F05340;">Micro</span><span style="color:#3b8070;">cept</span> Education</h4>
                         <img src="~/assets/images/radhakrishna.jpg" width="100%" style="margin-top:16px;">
                     </div>
-
+                    <div class="row mt-4">
+                      <div class="col-md-12">
+                        <h5 class="text-center">আমাৰ নিৰ্দেশক</h5>
+                      </div>
+                    </div>
+                    <div class="row p-4">
+                      <div class="col-md-6">
+                        <div class="card service-card">
+                            <img src="~/assets/images/udipta.jpg" width="100%">
+                            <div class="card-body">
+                                <h6 class="card-title">Udipta Gogoi (উদীপ্ত গগৈ)</h6>
+                                <h6 style="font-size:12px;">B.E (Electronics and Telecommunication Engineering)</h6>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card service-card">
+                            <img src="~/assets/images/puspa.jpg" width="100%">
+                            <div class="card-body">
+                                <h6 class="card-title">Puspa Plawan Gogoi (পুস্প প্লাৱন গগৈ)</h6>
+                                <h6 style="font-size:12px;">Pursuing M.Sc in Physics</h6>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+    <div id="materials" class="cards-1" >
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="text-center">মাইক্ৰচেপ্ত শিক্ষণ সহায়ক সামগ্ৰী</h5>
+                <div class="card p-2" style="width:100%;">
+                  <div class="card-body">
+                    <ul class="list-style-none float-left">
+                      <li v-for="(material,index) in materials" :key="index">
+                        <a target="_blank" class="link" :href="base_url+material.file">{{index+1}}. {{material.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-center">জাননী</h5>
+                <div class="card p-2" style="width:100%;">
+                  <div class="card-body">
+                    <p class="float-left notice" v-for="(notice,index) in notices" :key="index">
+                      <span class="text-info float-left"><span class="badge badge-pill badge-success" v-if="notice.is_new">New</span> {{notice.notice}}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -150,7 +205,7 @@
                           পৰীক্ষাৰ বাবে বিশেষভাৱে প্ৰস্তুত কৰা Mock Test .
                     </div>
                     <div class="offer-text-box">
-                      পাথ্যক্ৰমৰ লগতে কেৰিয়াৰ গাইড ।
+                      পাঠ্যক্ৰমৰ লগতে কেৰিয়াৰ গাইড ।
                     </div>
                   </div>
                 </div>
@@ -164,7 +219,7 @@
                     <h2>যোগাযোগৰ ঠিকনা</h2>
                     <ul class="list-unstyled li-space-lg">
                         <li><i class="fas fa-map-marker-alt"></i>লেঙেৰী বেটনী গাওঁ , পিন - ৭৮৬৬১৬ ,ডাক - লেঙেৰী বজাৰ</li>
-                        <li style="font-weight:600;"><i class="fas fa-phone"></i><a class="turquoise" href="tel:9101177123">+91 9101177123</a></li>
+                        <li style="font-weight:600;"><i class="fas fa-phone"></i><a class="turquoise" href="tel:9101177123">9101177123, 7002156143</a></li>
                         <li style="font-weight:600;"><i class="fas fa-envelope"></i><a class="turquoise" href="mailto:educationmicrocept@gmail.com">educationmicrocept@gmail.com</a></li>
                     </ul>
                 </div> <!-- end of col -->
@@ -205,12 +260,29 @@ export default {
         error:'',
         success:'',
         users:[],
+        materials:[],
+        notices:[],
+        base_url:'',
     }
    },
    mounted(){
-
+     this.loadMaterials();
+     this.loadNotices();
    },
    methods:{
+     loadNotices(){
+       this.$axios.get("https://azworker.com/public/api/microcept_education/notices")
+      .then(response => {
+        this.notices  = response.data.notices;
+      })
+     },
+     loadMaterials(){
+      this.$axios.get("https://azworker.com/public/api/microcept_education/materials")
+      .then(response => {
+        this.base_url = response.data.base_url;
+        this.materials  = response.data.materials;
+      })
+     },
     toggleTopMenu(){
         this.showMenu = !this.showMenu;
     },
@@ -270,5 +342,14 @@ h1 {
   margin-left:14px!important;
   height:80px;
   float:left;
+}
+.list-style-none{
+  list-style-type: none;
+}
+.link{
+   text-decoration: underline;
+}
+.notice{
+  text-align: left;
 }
 </style>
