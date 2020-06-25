@@ -54,7 +54,7 @@
                           </nuxt-link>
                         </el-row>
                         <div class="offer-text-box mt-4">
-                        গতানুগতিক শিক্ষা পদ্ধতিৰ পৰিৱৰ্তে নতুন দৃষ্টিভংগীৰে এক সুপৰিকল্পিত শিক্ষাৰ নিৰ্ভৰযোগ্য প্ৰতিষ্ঠান ।
+                        গতানুগতিক শিক্ষা পদ্ধতিৰ পৰিৱৰ্তে নতুন দৃষ্টিভংগীৰে সুপৰিকল্পিত শিক্ষাৰ এক নিৰ্ভৰযোগ্য প্ৰতিষ্ঠান ।
                         </div>
                         <div class="offer-text-box">
                         প্ৰত্যেক গোটত নিৰ্বাচিত দুজনকৈ ছাত্ৰ-ছাত্ৰীৰ বাবে বিনামূলীয়া শিক্ষাৰ ব্যৱস্থা ।
@@ -72,21 +72,28 @@
                       </div>
                     </div>
                     <div class="row p-4">
-                      <div class="col-md-6">
+                      <div class="col-md-4 p-2">
                         <div class="card service-card">
                             <img src="~/assets/images/udipta1.jpg" width="100%">
-                            <div class="card-body">
-                                <h6 class="card-title">Udipta Gogoi (উদীপ্ত গগৈ)</h6>
-                                <h6 style="font-size:12px;">B.E (Electronics and Telecommunication Engineering)</h6>
+                            <div class="card-body p-1 pt-2 text-center">
+                                <h6 class="card-title" style="font-size:12px;">Udipta Gogoi <br> (উদীপ্ত গগৈ) <br> <span style="font-size:10px;">B.E (ETC)</span></h6>
+                                <h6 style="font-size:10px;"></h6>
                             </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4 p-2">
                         <div class="card service-card">
                             <img src="~/assets/images/puspa.jpg" width="100%">
-                            <div class="card-body">
-                                <h6 class="card-title">Puspa Plawan Gogoi (পুস্প প্লাৱন গগৈ)</h6>
-                                <h6 style="font-size:12px;">Pursuing M.Sc in Physics</h6>
+                            <div class="card-body p-1 pt-2 text-center">
+                                <h6 style="font-size:12px;">Puspa Plawan Gogoi <br> (পুস্প প্লাৱন গগৈ) <br> <span style="font-size:10px;">Pursuing M.Sc in Physics</span></h6>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 p-2">
+                        <div class="card service-card">
+                            <img src="~/assets/images/trajit.jpg" width="100%">
+                            <div class="card-body p-1 pt-2 text-center">
+                                <h6 class="card-title" style="font-size:12px;">Trajit Sonowal <br>(ত্ৰজিৎ সোনোৱাল) <br> <span style="font-size:10px;">M.Sc in Physics</span></h6>
                             </div>
                         </div>
                       </div>
@@ -327,7 +334,8 @@ h1 {
 }
 .service-card{
     min-width:100%;
-  }
+    min-height: 220px;
+}
   .offer-text-box{
     background-color:#409EFF;
     color:white;
