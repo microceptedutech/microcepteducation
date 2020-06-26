@@ -112,7 +112,7 @@
                   <div class="card-body">
                     <ul class="list-style-none float-left">
                       <li v-for="(material,index) in materials" :key="index">
-                        <a target="_blank" class="link" :href="base_url+material.file">{{index+1}}. {{material.name}}</a>
+                        <a target="_blank" class="link" :href="base_url+material.file"><span style="font-size:12px"> {{index+1}}. {{material.name}}</span></a>
                       </li>
                     </ul>
                   </div>
